@@ -33,11 +33,10 @@ local function GetTools(Player)
 	end
 
 	table.foreach(Backpack:GetChildren(), function(Index, Value)
-    if Value:IsA('Tool') then
+		if Value:IsA('Tool') then
 			local Type = CheckTool(Value)
-            
-            if Type == 'Skill' then
-			    table.insert(Skills, Value.Name)
+			if Type == 'Skill' then
+				table.insert(Skills, Value.Name)
 			end
 		end
 	end)
@@ -57,7 +56,7 @@ for i, player in pairs(PlayerService:GetPlayers()) do
 			if #Skills >= 6 then
    				local RSkills = tostring(table.concat(Skills, ', '))
     				Players[i] = player
-    				PlayerSkills[i] = ('Skills: '.. RSkills)-- ('\nSkills - : '..table.concat(Skills, ', ')..(#Trinkets > 0 and '\nTrinkets - : '..table.concat(Trinkets, ', ')) or '')
+    				PlayerSkills[i] = ('Skills: '.. RSkills)
 			end
 		end
 	end
